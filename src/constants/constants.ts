@@ -1,0 +1,1 @@
+ export const imgURL = 'https://starwars-visualguide.com/assets/img/characters/';

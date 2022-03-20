@@ -1,0 +1,16 @@
+
+.star-button {
+    @apply text-[#073045] flex items-center justify-center border rounded-lg hover:bg-gray-100 active:bg-gray-200;
+}
+
+.small-button {
+    @apply h-5 text-[10px] px-[17px] font-medium;
+}
+
+.medium-button {
+    @apply px-6 h-[30px];
+}
+
+.large-button {
+    @apply w-24 h-10;
+}
