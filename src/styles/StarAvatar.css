@@ -1,4 +1,16 @@
 
 .star-avatar {
-    @apply w-10 h-10 rounded-full mr-[10px] object-cover;
+    @apply  rounded-full mr-[10px] object-cover;
+}
+
+.star-avatar-small {
+    @apply w-10 h-10;
+}
+
+.star-avatar-medium {
+    @apply w-16 h-16;
+}
+
+.star-avatar-large {
+    @apply w-24 h-24;
 }

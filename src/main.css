@@ -3,6 +3,7 @@
 @import "./styles/StarButton.css";
 @import "./styles/StarAvatar.css";
 @import "./styles/StarHome.css";
+@import "./styles/StarBox.css";
 
 @tailwind base;
 @tailwind components;

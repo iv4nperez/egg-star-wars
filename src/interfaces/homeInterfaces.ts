@@ -68,7 +68,13 @@ export interface ResultHeaders {
 }
 
 
-export interface ListCharacters {
+export interface Characters {
     name: string,
-    url: string
+    url: string,
+    height: string,
+    mass: string,
+    hair_color: string,
+    eye_color: string,
+    birth_year: string,
+    gender: string
 }

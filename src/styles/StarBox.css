@@ -1,0 +1,3 @@
+.star-box-container {
+    @apply w-full sm:w-[32%] md:w-[32%] h-36 rounded-lg border flex justify-center items-center cursor-pointer hover:shadow-md transition-all duration-150 ease-in mb-2;
+}

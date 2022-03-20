@@ -11,14 +11,14 @@ import { ReactComponent as ReactMoreInfo} from '../../assets/circle-plus-regular
 import { StarButton } from '../core/StarButton'
 import { StarAvatar } from '../core/StarAvatar'
 import { imgURL } from '../../constants/constants'
-import { startGetcharacters } from '../../actions/home'
-import { ListCharacters } from '../../interfaces/homeInterfaces'
+import { setCharacterSelected, startGetcharacters } from '../../actions/homeAction'
+import { Characters } from '../../interfaces/homeInterfaces'
 import { getId } from '../../helpers/tools'
 
 export const HomeScreen = () => {
     let navigate = useNavigate();
     const dispatch = useDispatch();
-    const { characterList }: { characterList: any } = useSelector( (state: any) => state.home );
+    const { characterList } : { characterList: Characters[] } = useSelector( (state: any) => state.home );
 
 
 
@@ -26,10 +26,12 @@ export const HomeScreen = () => {
         dispatch( startGetcharacters() )
     }, [])
 
-    const handleGoToDetail = () => {
+    const handleGoToDetail = (item: Characters) => {
+
+        dispatch( setCharacterSelected( item ) )
+
         navigate("/detail")
     }
-
 
   const imgHand = 'https://firebasestorage.googleapis.com/v0/b/baseapp-6f0e3.appspot.com/o/hand2.PNG?alt=media&token=a1fca4e9-fa50-42fe-97ca-4162eadb73db'
 
@@ -69,17 +71,19 @@ export const HomeScreen = () => {
        <div>
            <ul className='px-2 mb-10'>
                 {
-                    characterList.map((item: ListCharacters, i: number) => (
+                    characterList.map(( item: Characters, i: number ) => (
                         <li className={ clsx(
                             { 'star-home-list': true },
                             { 'border-b': i+1 !== characterList.length }
-                        )}>
+                        )}
+                        key={ getId( item.url ) }
+                        >
                             <div className='flex items-center'>
-                                <StarAvatar src={ imgURL + getId( item.url ) + '.jpg' } alt='1'  />
+                                <StarAvatar small src={ imgURL + getId( item.url ) + '.jpg' } alt='1'  />
                                 <p className='text-xs'>{ item.name }</p>
                             </div>
 
-                            <StarButton onClick={ handleGoToDetail } medium >
+                            <StarButton onClick={ () => handleGoToDetail( item ) } medium >
                                 <ReactMoreInfo className='w-[12.44px] mr-[5px]' /> <span className='text-[11px] font-bold'>Ver más</span>
                             </StarButton>
                         </li>
