@@ -1,5 +1,5 @@
 
-
 export const getId = (url: string) => {
-    return url.split('people')[1].replace('/', '').replace('/', '');
+    if(url)
+        return url.split('people')[1].replace('/', '').replace('/', '');
 }

@@ -4,6 +4,8 @@
 @import "./styles/StarAvatar.css";
 @import "./styles/StarHome.css";
 @import "./styles/StarBox.css";
+@import "./styles/StarSlider.css";
+@import "./styles/StarDetail.css";
 
 @tailwind base;
 @tailwind components;
