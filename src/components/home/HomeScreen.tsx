@@ -14,11 +14,13 @@ import { imgURL } from '../../constants/constants'
 import { setCharacterSelected, startGetcharacters } from '../../actions/homeAction'
 import { Characters } from '../../interfaces/homeInterfaces'
 import { getId } from '../../helpers/tools'
+import { StoreHome } from '../../reducers/homeReducer';
+import { StoreInterface } from '../../interfaces/storeInterface';
 
 export const HomeScreen = () => {
     let navigate = useNavigate();
     const dispatch = useDispatch();
-    const { characterList }: { characterList: Characters[] } = useSelector((state: any) => state.home);
+    const { characterList }: StoreHome = useSelector((state: StoreInterface) => state.home);
 
 
 

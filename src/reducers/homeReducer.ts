@@ -7,6 +7,10 @@ const initialState = {
     characterSelected: {}
 }
 
+export interface StoreHome {
+    characterList: Characters [],
+    characterSelected: Characters
+}
 
 interface Action {
     type: string,
