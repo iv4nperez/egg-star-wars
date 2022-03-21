@@ -4,7 +4,12 @@ module.exports = {
     fontFamily: {
       publicSans: ["Public Sans"],
     },
-    extend: {},
+    extend: {
+      screens: {
+        'sm-h': {'raw': '(max-height: 560px)'}
+      }
+    },
+
   },
   plugins: [],
 }

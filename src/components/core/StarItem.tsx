@@ -32,8 +32,8 @@ export const StarItem = ({ startwars, page, dots, title, subtitle, description, 
                         : null
                 }
 
-                <div className='h-[288px] w-full flex justify-center items-center'>
-                    <img style={{ width, height }} className='' src={startwars} alt="" />
+                <div className='sm-h:hidden h-[288px] w-full flex justify-center items-center'>
+                    <img  style={{ width, height }} className='' src={startwars} alt="" />
                 </div>
 
                 <div className='w-full h-52 flex flex-col items-center justify-center'>
